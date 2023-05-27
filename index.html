@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animated Login Form | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="center">
+      <h1>Login</h1>
+      <form method="post" id="form">
+        <div class="txt_field">
+          <input id="username" type="text" required>
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input id="password" type="password" required>
+          <span></span>
+          <label>Password</label>
+        </div>
+        <div class="pass">Forgot Password?</div>
+        <input type="submit" value="Log in">
+        <div class="signup_link">
+          New admin ? <a href="#">Signup</a>
+        </div>
+      </form>
+    </div>
+
+  <script>
+
+    const formEl= document.querySelector('#form');
+    const myHeaders = new Headers({
+      'Content-Type': 'application/json',
+    });
+    formEl.addEventListener('submit', event =>{
+      event.preventDefault();
+      const formData = new FormData(formEl);
+      console.log(document.querySelector('#username').value.toString());
+      console.log(document.querySelector('#password').value.toString());
+      user = {
+        username : document.querySelector('#username').value.toString(),
+        password:  document.querySelector('#password').value.toString()
+      }
+      fetch('https://news-website.herokuapp.com/login', {
+        method: 'POST',
+        headers: myHeaders,
+        body: JSON.stringify(user)
+      }).then(response => response.json())
+              .then(data => console.log(data))
+              .then(error => console.log(error));
+    })
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+  </body>
+</html>
