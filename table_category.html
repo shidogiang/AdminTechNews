@@ -49,7 +49,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="home.html">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -105,7 +105,7 @@
                         </li>
                         <!-- User Profile-->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                     href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                                     href="home.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                 class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                      href="table_user.html" aria-expanded="false"><i
@@ -216,9 +216,10 @@
     <!--Custom JavaScript -->
     <script src="dist/js/custom.js"></script>
     <script>
+        const adminToken = localStorage.getItem('admin_token');
         const myHeaders = new Headers({
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGFuaG5oYSIsImlhdCI6MTY4NDQ4NjkyMCwiZXhwIjoxNjg0NTczMzIwfQ.wzClWKVE8vDMBi8k3zIj2CIBGZ8syIlJB6Ju0rLhezKPCRTcFU3vO-3R4o02lK14G4U8HfKAa7dcaP2ZYXRh1Q'
+            'Authorization': 'Bearer' + adminToken
         });
         fetch('https://news-website.herokuapp.com/category/get-all', {
             method: 'GET',

@@ -242,9 +242,10 @@
 <!--Custom JavaScript -->
 <script src="dist/js/custom.js"></script>
 <script>
+    const adminToken = localStorage.getItem('admin_token');
     const myHeaders = new Headers({
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGFuaG5oYSIsImlhdCI6MTY4NDQ4NjkyMCwiZXhwIjoxNjg0NTczMzIwfQ.wzClWKVE8vDMBi8k3zIj2CIBGZ8syIlJB6Ju0rLhezKPCRTcFU3vO-3R4o02lK14G4U8HfKAa7dcaP2ZYXRh1Q'
+        'Authorization': 'Bearer' + adminToken
     });
     //get data from a previous page
     const postId = sessionStorage.getItem('post_id');
