@@ -11,7 +11,7 @@
     <meta name="description"
         content="Xtreme Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Xtreme Admin Lite Template by WrapPixel</title>
+    <title>Trang chủ</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtreme-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
@@ -112,13 +112,13 @@
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="table_user.html" aria-expanded="false"><i
-                                    class="mdi mdi-account-network"></i><span class="hide-menu">Users</span></a></li>
+                                    class="mdi mdi-account-network"></i><span class="hide-menu">Người dùng</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="table_category.html" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
-                                    class="hide-menu">Category</span></a></li>
+                                    class="hide-menu">Danh mục</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                      href="table_post.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
-                                class="hide-menu">Post</span></a></li>
+                                class="hide-menu">Bài đăng</span></a></li>
                     </ul>
 
                 </nav>
@@ -159,8 +159,8 @@
                             <div class="card-body">
                                 <div class="d-md-flex align-items-center">
                                     <div>
-                                        <h4 class="card-title">Post by month</h4>
-                                        <h5 class="card-subtitle">Overview of Latest</h5>
+                                        <h4 class="card-title">Bài viết theo tháng</h4>
+                                        <h5 class="card-subtitle">Tổng quan bài mới nhất</h5>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -183,13 +183,13 @@
                                 <div class="feed-widget">
                                     <ul class="list-style-none feed-body m-0 p-b-20">
                                         <li class="feed-item">
-                                            <div class="feed-icon bg-info"><i class="far fa-bell"></i></div><div class ="total_user">Users: </div>
+                                            <div class="feed-icon bg-info"><i class="far fa-bell"></i></div><div class ="total_user">Tổng người dùng: </div>
                                         </li>
                                         <li class="feed-item">
-                                            <div class="feed-icon bg-success"><i class="ti-server"></i></div>  <div class = "total_post">Post: </div>
+                                            <div class="feed-icon bg-success"><i class="ti-server"></i></div>  <div class = "total_post">Tổng bài đăng: </div>
                                         </li>
                                         <li class="feed-item">
-                                            <div class="feed-icon bg-warning"><i class="ti-shopping-cart"></i></div> <div class = "total_category">Category: </div>
+                                            <div class="feed-icon bg-warning"><i class="ti-shopping-cart"></i></div> <div class = "total_category">Tổng danh mục: </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -205,7 +205,7 @@
                                 <!-- title -->
                                 <div class="d-md-flex">
                                     <div>
-                                        <h4 class="card-title">Pending Post</h4></div>
+                                        <h4 class="card-title">Chờ duyệt</h4></div>
                                 </div>
                                 <!-- title -->
                             </div>
@@ -214,12 +214,12 @@
                                     <thead>
                                         <tr class="bg-light">
                                             <th class="border-top-0">ID</th>
-                                            <th class="border-top-0">Title</th>
-                                            <th class="border-top-0">Content</th>
-                                            <th class="border-top-0">Category ID</th>
-                                            <th class="border-top-0">Category Name</th>
-                                            <th class="border-top-0">Author</th>
-                                            <th class="border-top-0">Status</th>
+                                            <th class="border-top-0">Tiêu đề</th>
+                                            <th class="border-top-0">Nội dung</th>
+                                            <th class="border-top-0">ID Danh mục</th>
+                                            <th class="border-top-0">Tên danh mục</th>
+                                            <th class="border-top-0">Tác giả</th>
+                                            <th class="border-top-0">Trạng thái</th>
                                         </tr>
                                     <!--
                                     <label class="label label-danger">Angular</label>
@@ -310,7 +310,7 @@
                     data: {
                         labels: xlabels,
                         datasets: [{
-                            label: 'Post by month',
+                            label: 'Bài đăng theo tháng',
                             data: chart_data,
                         }]
                     },
@@ -325,6 +325,25 @@
             })
             .catch(error => console.log(error));
         <!-- ============================================================== -->
+        <!--Count total user -->
+        <!-- ============================================================== -->
+        fetch('https://news-website.herokuapp.com/admin/statistic', {
+            method: 'GET',
+            headers: myHeaders,})
+            .then(res =>{
+                return res.json();
+            })
+            .then(data => {
+                var markup = `<span>${data.totalUser}</span>`;
+                document.querySelector('.total_user').insertAdjacentHTML('beforeend',markup)
+                markup = `<span>${data.totalPost}</span>`;
+                document.querySelector('.total_post').insertAdjacentHTML('beforeend',markup)
+                markup = `<span>${data.totalCategory}</span>`;
+                document.querySelector('.total_category').insertAdjacentHTML('beforeend',markup)
+                console.log(data);
+            })
+            .catch(error => console.log(error));
+        /*<!-- ============================================================== -->
         <!--Count total user -->
         <!-- ============================================================== -->
         fetch('https://news-website.herokuapp.com/admin/users/getAllUser', {
@@ -355,7 +374,23 @@
                 document.querySelector('.total_post').insertAdjacentHTML('beforeend',markup)
                 console.log(data);
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error));*/
+        <!-- ============================================================== -->
+        <!-- Count total category -->
+        <!-- ============================================================== -->
+        /*fetch('https://news-website.herokuapp.com/category/get-all', {
+            method: 'GET',
+            headers: myHeaders,})
+            .then(res =>{
+                return res.json();
+            })
+            .then(data => {
+                const length  = data.length;
+                const markup = `<span>${length}</span>`;
+                document.querySelector('.total_category').insertAdjacentHTML('beforeend',markup)
+                console.log(data);
+            })
+            .catch(error => console.log(error));*/
         <!-- ============================================================== -->
         <!-- Get pending post -->
         <!-- ============================================================== -->
@@ -378,7 +413,7 @@
                                         <td><a id = "accept_post_${post.id}"
                                         class="btn label text-white label-danger"
                                         onclick="acceptPost(${post.id})"
-                                        >Pending</a></td>
+                                        >Đang chờ</a></td>
                                     </tr>`;
                     document.querySelector('.pending_post').insertAdjacentHTML('beforeend',markup)
                 });
@@ -389,24 +424,8 @@
             const myElement =  document.querySelector(`#accept_post_${id}`);
             myElement.classList.remove('label-danger');
             myElement.classList.add('label-success');
-            myElement.textContent = "Posted";
+            myElement.textContent = "Đã đăng";
         }
-        <!-- ============================================================== -->
-        <!-- Count total category -->
-        <!-- ============================================================== -->
-        fetch('https://news-website.herokuapp.com/category/get-all', {
-            method: 'GET',
-            headers: myHeaders,})
-            .then(res =>{
-                return res.json();
-            })
-            .then(data => {
-                const length  = data.length;
-                const markup = `<span>${length}</span>`;
-                document.querySelector('.total_category').insertAdjacentHTML('beforeend',markup)
-                console.log(data);
-            })
-            .catch(error => console.log(error));
     </script>
 </body>
 </html>

@@ -11,7 +11,7 @@
     <meta name="description"
           content="Xtreme Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Xtreme Admin Lite Template by WrapPixel</title>
+    <title>Cập nhật bài đăng</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtreme-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
@@ -105,17 +105,17 @@
                     </li>
                     <!-- User Profile-->
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                 href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                                 href="home.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                             class="hide-menu">Dashboard</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                  href="table_user.html" aria-expanded="false"><i
-                            class="mdi mdi-account-network"></i><span class="hide-menu">Users</span></a></li>
+                            class="mdi mdi-account-network"></i><span class="hide-menu">Người dùng</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                  href="table_category.html" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
-                            class="hide-menu">Category</span></a></li>
+                            class="hide-menu">Danh mục</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                  href="table_post.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
-                            class="hide-menu">Post</span></a></li>
+                            class="hide-menu">Bài đăng</span></a></li>
                 </ul>
 
             </nav>
@@ -136,7 +136,7 @@
         <div class="page-breadcrumb">
             <div class="row align-items-center">
                 <div class="col-5">
-                    <h4 class="page-title">Manage Post</h4>
+                    <h4 class="page-title">Quản lý bài đăng</h4>
                 </div>
             </div>
         </div>
@@ -161,14 +161,14 @@
                         <div class="card-body">
                             <form class="form-horizontal form-material mx-2">
                                 <div class="form-group">
-                                    <label class="col-md-12">Title</label>
+                                    <label class="col-md-12">Tiêu đề</label>
                                     <div class="col-md-12">
                                         <input type="text" id = "post_title"
                                                class="form-control form-control-line">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-12">Content</label>
+                                    <label class="col-md-12">Nội dung</label>
                                     <div class="col-md-12">
                                         <textarea id = "post_content" rows="5" class="form-control form-control-line"></textarea>
                                     </div>
@@ -178,16 +178,16 @@
                             <div class="col-sm-12" style="margin-left: 8px">
                                 <button class="btn label-success text-white"
                                         onclick="addData()"
-                                >Add</button>
+                                >Thêm</button>
                                 <span>
                                         <button class="btn label-info text-white"
                                                 onclick="updateData()"
-                                        >Update</button>
+                                        >Cập nhật</button>
                                     </span>
                                 <span>
                                         <button class="btn label-danger text-white"
                                                 onclick="deleteData()"
-                                        >Delete</button>
+                                        >Xóa</button>
                                     </span>
                             </div>
                         </div>
@@ -306,7 +306,7 @@
             body: JSON.stringify(post)
         }).then(response => {
                 console.log(response.status);
-                alert("Update success");
+                alert("Cập nhật thành công");
             }
         )
             .then(data => console.log(data))

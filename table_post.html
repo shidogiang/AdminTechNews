@@ -109,13 +109,13 @@
                                 class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                      href="table_user.html" aria-expanded="false"><i
-                                class="mdi mdi-account-network"></i><span class="hide-menu">Users</span></a></li>
+                                class="mdi mdi-account-network"></i><span class="hide-menu">Người dùng</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                      href="table_category.html" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
-                                class="hide-menu">Category</span></a></li>
+                                class="hide-menu">Danh mục</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                      href="table_post.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
-                                class="hide-menu">Post</span></a></li>
+                                class="hide-menu">Bài đăng</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -159,8 +159,8 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">ID</th>
-                                        <th scope="col">Title</th>
-                                        <th scope="col">Content</th>
+                                        <th scope="col">Tiêu đề</th>
+                                        <th scope="col">Nội dung</th>
                                     </tr>
                                     </thead>
                                     <tbody class = "post_infor">
@@ -237,7 +237,7 @@
                                         <td><a
                                         class="btn label text-white label-info"
                                         onclick="transferData(${post.id})"
-                                        href="update_post.html">Edit</a></td>
+                                        href="update_post.html">Chỉnh sửa</a></td>
                                     </tr>`;
                     document.querySelector('.post_infor').insertAdjacentHTML('beforeend',markup)
                 });

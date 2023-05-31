@@ -13,17 +13,17 @@
         <div class="txt_field">
           <input id="username" type="text" required>
           <span></span>
-          <label>Username</label>
+          <label>Tên đăng nhập</label>
         </div>
         <div class="txt_field">
           <input id="password" type="password" required>
           <span></span>
-          <label>Password</label>
+          <label>Mật khẩu</label>
         </div>
-        <div class="pass">Forgot Password?</div>
-        <input type="submit" value="Log in">
+        <div class="pass">Quên mật khẩu?</div>
+        <input type="submit" value="Đăng nhập">
         <div class="signup_link">
-          New admin ? <a href="#">Signup</a>
+          Admin mới ? <a href="#">Đăng ký</a>
         </div>
       </form>
     </div>
@@ -52,14 +52,14 @@
                 console.log(data);
                 if(data.token !=null){
                   localStorage.setItem('admin_token', data.token);
-                  window.location.href = "https://shidogiang.github.io/AdminTechNews/home.html"
+                  window.location.href = "home.html"
                 }
                 else{
                   Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                    footer: '<a href="">Why do I have this issue?</a>'
+                    icon: 'Lỗi',
+                    title: 'Ối...',
+                    text: 'Có gì đó không ổn!',
+                    footer: '<a href="">Tại sao tôi lại gặp vấn đề này?</a>'
                   })
                 }
                 })

@@ -109,13 +109,13 @@
                                 class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                      href="table_user.html" aria-expanded="false"><i
-                                class="mdi mdi-account-network"></i><span class="hide-menu">Users</span></a></li>
+                                class="mdi mdi-account-network"></i><span class="hide-menu">Người dùng</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                      href="table_category.html" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
-                                class="hide-menu">Category</span></a></li>
+                                class="hide-menu">Danh mục</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                                      href="table_post.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
-                                class="hide-menu">Post</span></a></li>
+                                class="hide-menu">Bài đăng</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -152,15 +152,15 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">User</h4>
+                                <h4 class="card-title">Người dùng</h4>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
                                             <th scope="col">ID</th>
-                                            <th scope="col">Full Name</th>
-                                            <th scope="col">Username</th>
+                                            <th scope="col">Tên đầy đủ</th>
+                                            <th scope="col">Tên đăng nhập</th>
                                         </tr>
                                     </thead>
                                     <tbody class = "user_infor">
@@ -242,7 +242,7 @@
             })
             .catch(error => console.log(error));
 
-        fetch('https://news-website.herokuapp.com/category/get-all', {
+        /*fetch('https://news-website.herokuapp.com/category/get-all', {
             method: 'GET',
             headers: myHeaders,})
             .then(res =>{
@@ -261,9 +261,9 @@
                 console.log(data);
 
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error));*/
 
-        fetch('https://news-website.herokuapp.com/post/get-all', {
+        /*fetch('https://news-website.herokuapp.com/post/get-all', {
             method: 'GET',
             headers: myHeaders,})
             .then(res =>{
@@ -282,7 +282,7 @@
                 console.log(data);
 
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error));*/
     </script>
 </body>
 
